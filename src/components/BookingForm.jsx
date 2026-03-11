@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { C, F } from '../tokens';
 import Btn from './Btn';
 export default function BookingForm() {
-  const [form, setForm] = useState({ name: '', email: '', org: '', service: 'Keynote / Storytelling', date: '', details: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '', org: '', service: 'Keynote / Storytelling', date: '', details: '' });
   const [done, setDone] = useState(false);
   const inp = { width: '100%', padding: '12px 16px', background: C.surface, border: '1px solid ' + C.t06, color: C.white, fontFamily: F.b, fontSize: 15, borderRadius: 4 };
   if (done) return (
@@ -16,6 +16,7 @@ export default function BookingForm() {
     <form onSubmit={(e) => { e.preventDefault(); setDone(true); }} style={{ display: 'flex', flexDirection: 'column', gap: 14, maxWidth: 560, margin: '0 auto' }}>
       <input placeholder="Your Name" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} style={inp} />
       <input type="email" placeholder="Email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} style={inp} />
+      <input type="tel" placeholder="Phone Number" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} style={inp} />
       <input placeholder="Organization" value={form.org} onChange={(e) => setForm({ ...form, org: e.target.value })} style={inp} />
       <select value={form.service} onChange={(e) => setForm({ ...form, service: e.target.value })} style={inp}>
         <option>Keynote / Storytelling</option>
