@@ -1,32 +1,14 @@
-@import "tailwindcss";
-
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-
-@theme {
-  --color-neon: #D4FF00;
-  --color-black: #0A0A0A;
-  --color-dark: #111111;
-  --color-gray: #1A1A1A;
-  --color-warm: #2A1F14;
-  --color-text: #E8E8E8;
-  --color-muted: #999999;
-  --font-display: 'Bebas Neue', cursive;
-  --font-body: 'DM Sans', system-ui, sans-serif;
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:#000;color:#fff;overflow-x:hidden}
+::selection{background:#D4FF0044;color:#000}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#000}
+::-webkit-scrollbar-thumb{background:#D4FF0044;border-radius:3px}
+a{color:inherit}
+img{max-width:100%;display:block}
+input:focus,select:focus,textarea:focus{border-color:#D4FF00!important;outline:none}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@media(max-width:768px){
+  nav>div>div:last-child{gap:6px!important}
+  nav>div>div:last-child a{font-size:10px!important}
 }
-
-::selection { background: var(--color-neon); color: var(--color-black); }
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--color-black); }
-::-webkit-scrollbar-thumb { background: var(--color-neon); border-radius: 3px; }
-
-body {
-  background: var(--color-black);
-  color: var(--color-text);
-  font-family: var(--font-body);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }

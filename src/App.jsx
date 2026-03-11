@@ -1,35 +1,36 @@
-import { Routes, Route } from 'react-router-dom'
-import { useState } from 'react'
-import Nav from './components/Nav'
-import Footer from './components/Footer'
-import Home from './pages/Home'
-import About from './pages/About'
-import Books from './pages/Books'
-import Booking from './pages/Booking'
-import FAQ from './pages/FAQ'
-import Contact from './pages/Contact'
+import { Routes, Route } from 'react-router-dom';
+import { C, F } from './tokens';
+import Nav from './components/Nav';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import About from './pages/About';
+import ServicePage from './pages/ServicePage';
+import Shop from './pages/Shop';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
+import Contact from './pages/Contact';
+import Admin from './pages/Admin';
+import SERVICES from './data/services';
 
 export default function App() {
-  const [cart, setCart] = useState([])
-  const addToCart = (item) => {
-    setCart(prev => {
-      const ex = prev.find(c => c.id === item.id)
-      return ex ? prev.map(c => c.id === item.id ? { ...c, qty: c.qty + 1 } : c) : [...prev, { ...item, qty: 1 }]
-    })
-  }
-
   return (
-    <div className="min-h-screen">
-      <Nav cart={cart} />
+    <div style={{ fontFamily: F.b, background: C.bg, color: C.white, minHeight: '100vh' }}>
+      <Nav />
       <Routes>
-        <Route path="/" element={<Home addToCart={addToCart} />} />
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/books" element={<Books addToCart={addToCart} />} />
-        <Route path="/booking" element={<Booking />} />
-        <Route path="/faq" element={<FAQ />} />
+        <Route path="/about-us" element={<About />} />
+        {SERVICES.map((s) => (
+          <Route key={s.slug} path={'/' + s.slug} element={<ServicePage service={s} />} />
+        ))}
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/book-online" element={<Contact />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
       <Footer />
     </div>
-  )
+  );
 }
