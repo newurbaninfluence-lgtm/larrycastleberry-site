@@ -134,21 +134,21 @@ export default function LarryChat() {
       <button onClick={() => setOpen(o => !o)} className="chat-launcher" style={{
         position: 'fixed', top: '50%', right: 0, transform: 'translateY(-50%)',
         zIndex: 9999, display: 'flex', flexDirection: 'column', alignItems: 'center',
-        background: C.accent, border: 'none', borderRadius: '12px 0 0 12px',
-        padding: '12px 10px 16px', cursor: 'pointer', gap: 10,
+        background: C.accent, border: 'none', borderRadius: '14px 0 0 14px',
+        padding: '22px 14px 28px', cursor: 'pointer', gap: 16,
         boxShadow: '-4px 0 24px rgba(212,255,0,0.25)',
         transition: 'transform 0.2s, box-shadow 0.2s',
       }}>
         {/* Face avatar */}
-        <div style={{ width: 44, height: 44, borderRadius: '50%', overflow: 'hidden', border: '2px solid #000', flexShrink: 0, position: 'relative' }}>
+        <div style={{ width: 62, height: 62, borderRadius: '50%', overflow: 'hidden', border: '3px solid #000', flexShrink: 0, position: 'relative' }}>
           <img src="/images/pro.jpg" alt="Larry" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
           {unread > 0 && !open && (
-            <span style={{ position: 'absolute', top: -2, right: -2, background: '#000', color: C.accent, borderRadius: '50%', width: 16, height: 16, fontFamily: F.h, fontSize: 10, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{unread}</span>
+            <span style={{ position: 'absolute', top: -2, right: -2, background: '#000', color: C.accent, borderRadius: '50%', width: 20, height: 20, fontFamily: F.h, fontSize: 12, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{unread}</span>
           )}
         </div>
         {/* Rotated label */}
         <span style={{
-          fontFamily: F.h, fontSize: 13, color: '#000', letterSpacing: 2,
+          fontFamily: F.h, fontSize: 17, color: '#000', letterSpacing: 3,
           writingMode: 'vertical-rl', textOrientation: 'mixed',
           transform: 'rotate(180deg)', whiteSpace: 'nowrap',
         }}>CHAT WITH LARRY</span>
