@@ -40,7 +40,7 @@ input:focus,select:focus,textarea:focus{border-color:#D4FF00!important;outline:n
 
   .gallery-grid{grid-template-columns:1fr!important;grid-template-rows:auto!important}
   .gallery-grid>*{grid-row:auto!important;height:260px!important}
-  .hero-img{object-position:65% 20%!important}
+  .hero-img{object-position:center 15%!important}
 
   .services-grid{grid-template-columns:1fr!important}
   .blog-grid{grid-template-columns:1fr!important}
