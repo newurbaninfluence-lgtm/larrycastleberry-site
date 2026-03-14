@@ -1,0 +1,39 @@
+{
+  "name": "Larry Castleberry",
+  "short_name": "Larry C",
+  "description": "Master Storyteller, Author & Voice Actor — Detroit, MI",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#D4FF00",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/pro.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/pro.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Book Larry",
+      "short_name": "Book",
+      "url": "/book-online",
+      "description": "Book Larry for your event"
+    },
+    {
+      "name": "Shop Books",
+      "short_name": "Shop",
+      "url": "/shop",
+      "description": "Order Hush Your Mouth"
+    }
+  ],
+  "categories": ["entertainment", "education", "business"]
+}
