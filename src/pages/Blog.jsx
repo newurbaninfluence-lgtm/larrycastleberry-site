@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { C, F } from '../tokens';
 import FadeIn from '../components/FadeIn';
 import SH from '../components/SectionHeader';
+import SEOHead from '../components/SEOHead';
 import { supabase } from '../supabase';
 import STATIC_BLOGS from '../data/blogs';
 
@@ -34,6 +35,7 @@ export default function Blog() {
 
   return (
     <section style={{ background: C.bg, minHeight: '100vh', padding: '120px 2rem 100px' }}>
+      <SEOHead title="Blog — Stories & Insights" description="Stories, tips, and insights from master storyteller Larry Castleberry. Topics include storytelling, voice acting, public speaking, and life lessons." url="/blog" />
       <SH tag="Latest Stories" title="The Blog" />
 
       {/* CATEGORY FILTER */}

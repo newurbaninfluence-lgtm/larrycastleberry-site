@@ -5,9 +5,32 @@ import SH from '../components/SectionHeader';
 import Btn from '../components/Btn';
 import TC from '../components/TestimonialCarousel';
 import BF from '../components/BookingForm';
+import SEOHead from '../components/SEOHead';
 import SERVICES from '../data/services';
 import TRUSTED from '../data/trusted';
 import BLOGS from '../data/blogs';
+
+const HOME_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Larry Castleberry',
+  jobTitle: 'Storyteller, Author, Voice Actor',
+  url: 'https://www.larrycastleberry.com',
+  image: 'https://www.larrycastleberry.com/images/pro.jpg',
+  address: { '@type': 'PostalAddress', addressLocality: 'Detroit', addressRegion: 'MI', addressCountry: 'US' },
+  worksFor: { '@type': 'Organization', name: 'Larry Castleberry LLC' },
+  knowsAbout: ['Storytelling', 'Public Speaking', 'Voice Acting', 'Narration', 'MLK Jr. Portrayal'],
+};
+
+export default function Home() {
+  return (
+    <>
+      <SEOHead
+        title="Master Storyteller, Author & Voice Actor | Detroit, MI"
+        description="Larry Castleberry is Detroit's premier storytelling speaker, author, and voice actor. Trusted by Ford, Pfizer, and Michigan libraries. Book for events, schools, and corporate keynotes."
+        url="/"
+        schema={HOME_SCHEMA}
+      />
 
 const GAL = [
   { img: '/images/kids.jpg', label: 'Live Performance', sub: 'Next generation', tall: true },

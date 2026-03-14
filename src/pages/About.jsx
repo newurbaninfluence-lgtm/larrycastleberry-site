@@ -1,9 +1,12 @@
 import { C, F } from '../tokens';
 import FadeIn from '../components/FadeIn';
 import SH from '../components/SectionHeader';
+import SEOHead from '../components/SEOHead';
 export default function About() {
   return (
-    <section style={{ background: C.bg, padding: '120px 2rem 100px', minHeight: '100vh' }}>
+    <>
+      <SEOHead title="About Larry Castleberry" description="Meet Larry Castleberry — Detroit's master storyteller, MLK Jr. portrayal artist, author of Hush Your Mouth, and voice actor with 20+ years performing across Michigan and the nation." url="/about" />
+      <section style={{ background: C.bg, padding: '120px 2rem 100px', minHeight: '100vh' }}>
       <SH tag="About" title="Larry Castleberry" />
       <div style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: '400px 1fr', gap: 48, alignItems: 'start' }}>
         <FadeIn><img src="/images/about.jpg" alt="Larry" style={{ width: '100%', borderRadius: 8 }} /></FadeIn>
@@ -15,5 +18,6 @@ export default function About() {
         </FadeIn>
       </div>
     </section>
+    </>
   );
 }

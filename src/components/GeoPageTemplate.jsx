@@ -5,6 +5,7 @@ import FadeIn from './FadeIn';
 import Btn from './Btn';
 import SH from './SectionHeader';
 import BF from './BookingForm';
+import SEOHead from './SEOHead';
 
 export default function GeoPageTemplate({ page }) {
   const { city, state, heroTag, headline, subhead, credential,
