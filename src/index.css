@@ -31,6 +31,7 @@ input:focus,select:focus,textarea:focus{border-color:#D4FF00!important;outline:n
 @keyframes typingBounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
 
 @media(max-width:768px){
+  .footer-grid{grid-template-columns:1fr 1fr!important}
   .chat-launcher:hover{transform:translateY(-50%) translateX(-2px)!important}
   nav>div>div:last-child{gap:6px!important}
   nav>div>div:last-child a{font-size:10px!important}
