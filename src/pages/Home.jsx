@@ -22,6 +22,14 @@ const HOME_SCHEMA = {
   knowsAbout: ['Storytelling', 'Public Speaking', 'Voice Acting', 'Narration', 'MLK Jr. Portrayal'],
 };
 
+const GAL = [
+  { img: '/images/kids.jpg',         label: 'Live Performance', sub: 'Next generation',  tall: true, pos: '50% 20%' },
+  { img: '/images/mic-stage.jpg',    label: 'Voice Actor',      sub: 'Stage & studio',              pos: '50% 15%' },
+  { img: '/images/headphones.jpg',   label: 'Narration',        sub: 'Audio production',            pos: '50% 10%' },
+  { img: '/images/book-holding.jpg', label: 'Author',           sub: 'Hush Your Mouth',             pos: '50% 20%' },
+  { img: '/images/pro.jpg',          label: 'Keynote',          sub: 'Ideas That Inspire',          pos: '50% 10%' },
+];
+
 export default function Home() {
   return (
     <>
@@ -32,17 +40,6 @@ export default function Home() {
         schema={HOME_SCHEMA}
       />
 
-const GAL = [
-  { img: '/images/kids.jpg',        label: 'Live Performance', sub: 'Next generation',   tall: true, pos: '50% 20%' },
-  { img: '/images/mic-stage.jpg',   label: 'Voice Actor',      sub: 'Stage & studio',              pos: '50% 15%' },
-  { img: '/images/headphones.jpg',  label: 'Narration',        sub: 'Audio production',             pos: '50% 10%' },
-  { img: '/images/book-holding.jpg',label: 'Author',           sub: 'Hush Your Mouth',              pos: '50% 20%' },
-  { img: '/images/pro.jpg',         label: 'Keynote',          sub: 'Ideas That Inspire',           pos: '50% 10%' },
-];
-
-export default function Home() {
-  return (
-    <>
       {/* HERO */}
       <section style={{ minHeight: '100vh', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0 }}>
