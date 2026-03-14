@@ -24,13 +24,14 @@ input:focus,select:focus,textarea:focus{border-color:#D4FF00!important;outline:n
 /* ── RESPONSIVE GRIDS ── */
 /* ── CHATBOT ── */
 @keyframes chatSlideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.chat-launcher:hover{transform:scale(1.08)!important;box-shadow:0 0 0 6px rgba(212,255,0,0.18),0 12px 32px rgba(0,0,0,0.6)!important}
+.chat-launcher:hover{transform:translateY(-50%) translateX(-4px)!important;box-shadow:-8px 0 32px rgba(212,255,0,0.35)!important}
 .typing-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:rgba(212,255,0,0.6);margin:0 2px;animation:typingBounce 1.2s infinite}
 .typing-dot:nth-child(2){animation-delay:0.2s}
 .typing-dot:nth-child(3){animation-delay:0.4s}
 @keyframes typingBounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
 
 @media(max-width:768px){
+  .chat-launcher:hover{transform:translateY(-50%) translateX(-2px)!important}
   nav>div>div:last-child{gap:6px!important}
   nav>div>div:last-child a{font-size:10px!important}
 

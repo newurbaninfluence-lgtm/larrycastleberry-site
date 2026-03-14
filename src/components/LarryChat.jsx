@@ -56,7 +56,8 @@ export default function LarryChat() {
       {/* CHAT WINDOW */}
       {open && (
         <div style={{
-          position: 'fixed', bottom: 96, right: 24, zIndex: 9999,
+          position: 'fixed', bottom: 'auto', top: '50%', right: 90, transform: 'translateY(-50%)',
+          zIndex: 9999,
           width: 'min(380px, calc(100vw - 32px))',
           background: '#0d0d0d', border: '1px solid rgba(212,255,0,0.2)',
           borderRadius: 16, boxShadow: '0 24px 60px rgba(0,0,0,0.7), 0 0 0 1px rgba(212,255,0,0.08)',
@@ -129,18 +130,28 @@ export default function LarryChat() {
         </div>
       )}
 
-      {/* LAUNCHER BUBBLE */}
-      <button onClick={() => setOpen(o => !o)} style={{
-        position: 'fixed', bottom: 24, right: 24, zIndex: 9999,
-        width: 60, height: 60, borderRadius: '50%', border: '2px solid #D4FF00',
-        padding: 0, cursor: 'pointer', overflow: 'hidden',
-        boxShadow: '0 0 0 4px rgba(212,255,0,0.12), 0 8px 24px rgba(0,0,0,0.5)',
+      {/* SIDE TAB LAUNCHER */}
+      <button onClick={() => setOpen(o => !o)} className="chat-launcher" style={{
+        position: 'fixed', top: '50%', right: 0, transform: 'translateY(-50%)',
+        zIndex: 9999, display: 'flex', flexDirection: 'column', alignItems: 'center',
+        background: C.accent, border: 'none', borderRadius: '12px 0 0 12px',
+        padding: '12px 10px 16px', cursor: 'pointer', gap: 10,
+        boxShadow: '-4px 0 24px rgba(212,255,0,0.25)',
         transition: 'transform 0.2s, box-shadow 0.2s',
-      }} className="chat-launcher">
-        <img src="/images/pro.jpg" alt="Chat with Larry" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
-        {unread > 0 && !open && (
-          <span style={{ position: 'absolute', top: -2, right: -2, background: C.accent, color: '#000', borderRadius: '50%', width: 18, height: 18, fontFamily: F.h, fontSize: 11, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{unread}</span>
-        )}
+      }}>
+        {/* Face avatar */}
+        <div style={{ width: 44, height: 44, borderRadius: '50%', overflow: 'hidden', border: '2px solid #000', flexShrink: 0, position: 'relative' }}>
+          <img src="/images/pro.jpg" alt="Larry" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+          {unread > 0 && !open && (
+            <span style={{ position: 'absolute', top: -2, right: -2, background: '#000', color: C.accent, borderRadius: '50%', width: 16, height: 16, fontFamily: F.h, fontSize: 10, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{unread}</span>
+          )}
+        </div>
+        {/* Rotated label */}
+        <span style={{
+          fontFamily: F.h, fontSize: 13, color: '#000', letterSpacing: 2,
+          writingMode: 'vertical-rl', textOrientation: 'mixed',
+          transform: 'rotate(180deg)', whiteSpace: 'nowrap',
+        }}>CHAT WITH LARRY</span>
       </button>
     </>
   );
