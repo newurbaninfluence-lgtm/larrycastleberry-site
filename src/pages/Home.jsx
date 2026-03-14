@@ -31,7 +31,6 @@ const GAL = [
 ];
 
 export default function Home() {
-  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
   return (
     <>
       <SEOHead
@@ -44,7 +43,7 @@ export default function Home() {
       {/* HERO */}
       <section style={{ minHeight: '100vh', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0 }}>
-          <img src={isMobile ? '/images/pro.jpg' : '/images/hero.jpg'} alt="Larry Castleberry" className="hero-img" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: isMobile ? 'center 15%' : '50% 20%' }} />
+          <img src="/images/hero.jpg" alt="Larry Castleberry" className="hero-img" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 20%' }} />
         </div>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(0deg,rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.35) 40%,rgba(0,0,0,0.35) 60%,rgba(0,0,0,0.75) 100%)' }} />
         <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', padding: '120px 2rem 80px', width: '100%' }}>
