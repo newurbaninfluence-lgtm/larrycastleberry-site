@@ -12,6 +12,8 @@ import BlogPost from './pages/BlogPost';
 import Contact from './pages/Contact';
 import Admin from './pages/Admin';
 import SERVICES from './data/services';
+import { GEO_PAGES } from './data/geoPages';
+import GeoPageTemplate from './components/GeoPageTemplate';
 
 export default function App() {
   return (
@@ -26,6 +28,9 @@ export default function App() {
         ))}
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
+        {GEO_PAGES.map((page) => (
+          <Route key={page.slug} path={'/' + page.slug} element={<GeoPageTemplate page={page} />} />
+        ))}
         <Route path="/contact" element={<Contact />} />
         <Route path="/book-online" element={<Contact />} />
         <Route path="/shop" element={<Shop />} />
