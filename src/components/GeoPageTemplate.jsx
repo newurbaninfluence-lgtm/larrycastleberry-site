@@ -1,8 +1,4 @@
-// ─────────────────────────────────────────────────────────
-// GeoPageTemplate.jsx
-// ONE component. ALL geo/location pages render from this.
-// Change layout, colors, or sections here → every page updates.
-// ─────────────────────────────────────────────────────────
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { C, F } from '../tokens';
 import FadeIn from './FadeIn';
@@ -12,7 +8,34 @@ import BF from './BookingForm';
 
 export default function GeoPageTemplate({ page }) {
   const { city, state, heroTag, headline, subhead, credential,
-    credentialSub, targetOrgs, cta, type } = page;
+    credentialSub, targetOrgs, cta, type, metaTitle, metaDesc } = page;
+
+  // ── SEO: update title + meta description per page ──
+  useEffect(() => {
+    document.title = metaTitle;
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) { meta = document.createElement('meta'); meta.name = 'description'; document.head.appendChild(meta); }
+    meta.content = metaDesc;
+
+    // LocalBusiness schema
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      name: 'Larry Castleberry',
+      description: metaDesc,
+      url: `https://www.larrycastleberry.com/${page.slug}`,
+      telephone: '',
+      address: { '@type': 'PostalAddress', addressLocality: city, addressRegion: state, addressCountry: 'US' },
+      areaServed: { '@type': 'City', name: city },
+      priceRange: '$$',
+      image: 'https://www.larrycastleberry.com/images/pro.jpg',
+    };
+    let script = document.getElementById('lc-schema');
+    if (!script) { script = document.createElement('script'); script.id = 'lc-schema'; script.type = 'application/ld+json'; document.head.appendChild(script); }
+    script.textContent = JSON.stringify(schema);
+
+    return () => { script?.remove(); };
+  }, [page.slug]);
 
   return (
     <>
