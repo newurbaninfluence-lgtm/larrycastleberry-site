@@ -47,9 +47,9 @@ export default function Home() {
       {/* GALLERY */}
       <section style={{ background: C.bg, padding: '80px 2rem' }}>
         <SH tag="In Action" title="On Stage &amp; In Studio" />
-        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1.3fr 1fr 1fr', gridTemplateRows: '300px 300px', gap: 16 }}>
+        <div className="gallery-grid" style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1.3fr 1fr 1fr', gridTemplateRows: '300px 300px', gap: 16 }}>
           {GAL.map((g, i) => (
-            <FadeIn key={i} style={{ position: 'relative', borderRadius: 12, overflow: 'hidden', gridRow: g.tall ? 'span 2' : undefined }}>
+            <FadeIn key={i} className="gallery-card" style={{ position: 'relative', borderRadius: 12, overflow: 'hidden', gridRow: g.tall ? 'span 2' : undefined }}>
               <img src={g.img} alt={g.label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: 20, background: 'linear-gradient(0deg,rgba(0,0,0,0.9) 0%,transparent 100%)' }}>
                 <span style={{ fontFamily: F.h, color: C.accent, fontSize: 20, letterSpacing: 2 }}>{g.label}</span>
@@ -101,10 +101,10 @@ export default function Home() {
       {/* SERVICES */}
       <section style={{ background: C.bg, padding: '100px 2rem' }}>
         <SH tag="What Larry Does" title="Services" />
-        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24 }}>
+        <div className="services-grid" style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24 }}>
           {SERVICES.map((s, i) => (
             <Link key={i} to={'/' + s.slug} style={{ textDecoration: 'none' }}>
-              <FadeIn style={{ background: C.card, padding: 32, border: '1px solid ' + C.t06, borderRadius: 8, height: '100%' }}>
+              <FadeIn className="card-hover" style={{ background: C.card, padding: 32, border: '1px solid ' + C.t06, borderRadius: 8, height: '100%' }}>
                 <div style={{ fontFamily: F.h, fontSize: 48, color: C.accent }}>{s.num}</div>
                 <h3 style={{ fontFamily: F.h, color: C.white, fontSize: 24, letterSpacing: 1, margin: '12px 0 8px' }}>{s.title}</h3>
                 <p style={{ fontFamily: F.b, color: C.t50, fontSize: 14, lineHeight: 1.7 }}>{s.desc}</p>
@@ -127,7 +127,7 @@ export default function Home() {
       {/* BOOK */}
       <section style={{ background: 'linear-gradient(135deg,#0a0a0a,#1a1400,#0a0a0a)', padding: '100px 2rem' }}>
         <SH tag="Available Now" title="The Book" />
-        <div style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: '260px 1fr', gap: 60, alignItems: 'center' }}>
+        <div className="book-grid" style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: '260px 1fr', gap: 60, alignItems: 'center' }}>
           <FadeIn>
             <img src="/images/book-cover.jpg" alt="Hush Your Mouth" style={{ width: '100%', borderRadius: 8, boxShadow: '0 30px 80px rgba(0,0,0,0.6)' }} />
           </FadeIn>
@@ -143,10 +143,10 @@ export default function Home() {
       {/* BLOG PREVIEW */}
       <section style={{ background: C.bg, padding: '100px 2rem' }}>
         <SH tag="Latest Stories" title="Blog" />
-        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24 }}>
+        <div className="blog-grid" style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24 }}>
           {BLOGS.map((p, i) => (
             <Link key={i} to={'/blog/' + p.slug} style={{ textDecoration: 'none' }}>
-              <FadeIn style={{ background: C.card, border: '1px solid ' + C.t06, overflow: 'hidden', borderRadius: 8 }}>
+              <FadeIn className="card-hover" style={{ background: C.card, border: '1px solid ' + C.t06, overflow: 'hidden', borderRadius: 8 }}>
                 <div style={{ height: 160, background: 'linear-gradient(135deg,#1a1a00,' + C.card + ')', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <span style={{ fontSize: 48 }}>{p.emoji}</span>
                 </div>
