@@ -148,10 +148,10 @@ export default function LarryChat() {
         </div>
         {/* Rotated label */}
         <span style={{
-          fontFamily: F.h, fontSize: 17, color: '#000', letterSpacing: 3,
+          fontFamily: F.b, fontWeight: 700, fontSize: 15, color: '#000', letterSpacing: 2,
           writingMode: 'vertical-rl', textOrientation: 'mixed',
           transform: 'rotate(180deg)', whiteSpace: 'nowrap',
-        }}>CHAT WITH LARRY</span>
+        }}>ASK LARRY</span>
       </button>
     </>
   );
