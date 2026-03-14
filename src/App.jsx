@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { C, F } from './tokens';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
+import LarryChat from './components/LarryChat';
 import Home from './pages/Home';
 import About from './pages/About';
 import ServicePage from './pages/ServicePage';
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="/admin" element={<Admin />} />
       </Routes>
       <Footer />
+      <LarryChat />
     </div>
   );
 }
