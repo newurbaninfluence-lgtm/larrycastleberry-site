@@ -33,11 +33,11 @@ export default function Home() {
       />
 
 const GAL = [
-  { img: '/images/kids.jpg', label: 'Live Performance', sub: 'Next generation', tall: true },
-  { img: '/images/mic-stage.jpg', label: 'Voice Actor', sub: 'Stage & studio' },
-  { img: '/images/headphones.jpg', label: 'Narration', sub: 'Audio production' },
-  { img: '/images/book-holding.jpg', label: 'Author', sub: 'Hush Your Mouth' },
-  { img: '/images/pro.jpg', label: 'Keynote', sub: 'Ideas That Inspire' },
+  { img: '/images/kids.jpg',        label: 'Live Performance', sub: 'Next generation',   tall: true, pos: '50% 20%' },
+  { img: '/images/mic-stage.jpg',   label: 'Voice Actor',      sub: 'Stage & studio',              pos: '50% 15%' },
+  { img: '/images/headphones.jpg',  label: 'Narration',        sub: 'Audio production',             pos: '50% 10%' },
+  { img: '/images/book-holding.jpg',label: 'Author',           sub: 'Hush Your Mouth',              pos: '50% 20%' },
+  { img: '/images/pro.jpg',         label: 'Keynote',          sub: 'Ideas That Inspire',           pos: '50% 10%' },
 ];
 
 export default function Home() {
@@ -46,7 +46,7 @@ export default function Home() {
       {/* HERO */}
       <section style={{ minHeight: '100vh', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0 }}>
-          <img src="/images/hero.jpg" alt="Larry Castleberry" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }} />
+          <img src="/images/hero.jpg" alt="Larry Castleberry" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 20%' }} />
         </div>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(0deg,rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.35) 40%,rgba(0,0,0,0.35) 60%,rgba(0,0,0,0.75) 100%)' }} />
         <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', padding: '120px 2rem 80px', width: '100%' }}>
@@ -73,7 +73,7 @@ export default function Home() {
         <div className="gallery-grid" style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1.3fr 1fr 1fr', gridTemplateRows: '300px 300px', gap: 16 }}>
           {GAL.map((g, i) => (
             <FadeIn key={i} className="gallery-card" style={{ position: 'relative', borderRadius: 12, overflow: 'hidden', gridRow: g.tall ? 'span 2' : undefined }}>
-              <img src={g.img} alt={g.label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={g.img} alt={g.label} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: g.pos || '50% 20%' }} />
               <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: 20, background: 'linear-gradient(0deg,rgba(0,0,0,0.9) 0%,transparent 100%)' }}>
                 <span style={{ fontFamily: F.h, color: C.accent, fontSize: 20, letterSpacing: 2 }}>{g.label}</span>
                 <span style={{ display: 'block', fontFamily: F.b, color: C.t65, fontSize: 12, marginTop: 2 }}>{g.sub}</span>
