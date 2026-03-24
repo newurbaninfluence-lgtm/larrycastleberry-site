@@ -42,6 +42,9 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <link rel="manifest" href="/manifest.json" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<script>
+(async()=>{try{const r=await fetch("https://jcgvkyizoimwbolhfpta.supabase.co/rest/v1/client_sites?site_id=eq.larrycastleberry&select=status,suspended_reason",{headers:{"apikey":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpjZ3ZreWl6b2ltd2JvbGhmcHRhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAzMDMwMjQsImV4cCI6MjA4NTg3OTAyNH0.a8gjkPoUHQ1kgROa2Lqaq3252opqg5CPMm6vR3t1NOk"}});const d=await r.json();if(d[0]&&d[0].status==="suspended"){document.documentElement.innerHTML='<body style="margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#080808;color:#fff;font-family:system-ui,sans-serif"><div style="text-align:center;padding:40px"><div style="font-size:64px;margin-bottom:24px">\u26A0\uFE0F</div><h1 style="font-size:28px;font-weight:900;margin-bottom:12px">Site Temporarily Suspended</h1><p style="color:rgba(255,255,255,0.5);font-size:16px;max-width:400px;line-height:1.6">'+(d[0].suspended_reason||"This site has been temporarily taken offline.")+'</p><p style="margin-top:32px;color:rgba(255,255,255,0.3);font-size:13px">Managed by <a href="https://newurbaninfluence.com" style="color:#D4A84B">New Urban Influence</a></p></div></body>'}}catch(e){console.log("Status check skipped")}})();
+</script>
 </head>
 <body>
   <div id="root"></div>
